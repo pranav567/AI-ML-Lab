@@ -12,9 +12,6 @@
 # using dfs 
 # the first empty lane found is visited
 
-
-from hashlib import new
-from math import trunc
 import turtle
 import random
 import time
