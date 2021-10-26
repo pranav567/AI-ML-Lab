@@ -6,10 +6,9 @@
 
 from tkinter import *
 window=Tk()
-# add widgets here
 
-window.title('Hello Python')
-window.geometry("450x350+400+250")
+window.title('Tic-Tac-Toe')
+window.geometry("450x350+900+250")
 
 
 def on_click(box_number, symbol):
@@ -95,13 +94,9 @@ btn6.place(x=260, y=135)
 btn9=Button(window, width=10, height=5)
 btn9.place(x=260, y=220)
 
-
-
-
-
-
-
 import random
+import time
+
 num = [0,1,2,3,4,5,6,7,8]
 board = ['0', '0', '0', '0', '0', '0', '0', '0', '0']
 board_row = [['0', '0', '0'], ['0', '0', '0'], ['0', '0', '0']]
@@ -130,7 +125,7 @@ def player_win(player):
     else:
         return False
 
-#check if any player has winning moves only if the total moves played combined by both player is >= 4
+#check if any player has winning moves
 def check_wins():
     win_X = []
     win_O = []
@@ -305,12 +300,8 @@ def heuristic(current_player):
         
         if current_player == 'X':
             heuristic_values.append(X_combo-O_combo)
-            # print("heuris -> " , end=' ')
-            # print(X_combo-O_combo)
         else:
             heuristic_values.append(O_combo-X_combo)
-            # print("heuris -> " , end=' ')
-            # print(X_combo-O_combo)
 
         
         heuristic_values_choices.append(choice)
@@ -320,9 +311,6 @@ def heuristic(current_player):
     for i in range(len(heuristic_values)):
         if heuristic_values[i] == max_value:
             final_heuristics.append(heuristic_values_choices[i])
-
-    # print(max_value)
-    # print(final_heuristics)
 
     if len(empty) >= 7:
         return random.choice(final_heuristics)
@@ -374,7 +362,6 @@ def main():
     game_won = False
     player = ['X' , 'O']
     start_Player = random.choice(player)
-    # start_Player = 'X'
     total_moves = 0
 
     print("User is " + start_Player + "\nComp is ",end=' ')
@@ -457,7 +444,7 @@ def main():
         total_moves = total_moves + 1
 
         if player_win(start_Player):
-            print(start_Player + " WON!!")
+            print("\n" + start_Player + " WON!!\n")
             game_won = True
             break    
                 
@@ -465,6 +452,8 @@ def main():
             start_Player = 'O'
         else:
             start_Player = 'X'
+
+        time.sleep(0.5)
 
 
     for i in range(3):
@@ -474,9 +463,10 @@ def main():
             else:
                 print(board_row[i][j], end=" ")
         print()
+    print()
     
     if not game_won:
-        print("\n TIE!!")
+        print("\nTIE!!")
 
 
 if __name__ == "__main__":
