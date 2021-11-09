@@ -4,95 +4,95 @@
 # after taking all moves for maximum values calculate if there is any psoition with win in possible next move but check if there is next move possible
 # select the random possibility
 
-from tkinter import *
-window=Tk()
+# from tkinter import *
+# window=Tk()
 
-window.title('Tic-Tac-Toe')
-window.geometry("450x350+900+250")
+# window.title('Tic-Tac-Toe')
+# window.geometry("450x350+900+250")
 
 
-def on_click(box_number, symbol):
-    if box_number == 1:
-        btn1['text'] = symbol
-        if symbol == 'X':
-            btn1['bg'] = 'red'
-        else:
-            btn1['bg'] = 'blue'
+# def on_click(box_number, symbol):
+#     if box_number == 1:
+#         btn1['text'] = symbol
+#         if symbol == 'X':
+#             btn1['bg'] = 'red'
+#         else:
+#             btn1['bg'] = 'blue'
 
-    elif box_number == 2:
-        btn2['text'] = symbol
-        if symbol == 'X':
-            btn2['bg'] = 'red'
-        else:
-            btn2['bg'] = 'blue'
+#     elif box_number == 2:
+#         btn2['text'] = symbol
+#         if symbol == 'X':
+#             btn2['bg'] = 'red'
+#         else:
+#             btn2['bg'] = 'blue'
 
-    elif box_number == 3:
-        btn3['text'] = symbol
-        if symbol == 'X':
-            btn3['bg'] = 'red'
-        else:
-            btn3['bg'] = 'blue'
+#     elif box_number == 3:
+#         btn3['text'] = symbol
+#         if symbol == 'X':
+#             btn3['bg'] = 'red'
+#         else:
+#             btn3['bg'] = 'blue'
 
-    elif box_number == 4:
-        btn4['text'] = symbol
-        if symbol == 'X':
-            btn4['bg'] = 'red'
-        else:
-            btn4['bg'] = 'blue'
+#     elif box_number == 4:
+#         btn4['text'] = symbol
+#         if symbol == 'X':
+#             btn4['bg'] = 'red'
+#         else:
+#             btn4['bg'] = 'blue'
 
-    elif box_number == 5:
-        btn5['text'] = symbol
-        if symbol == 'X':
-            btn5['bg'] = 'red'
-        else:
-            btn5['bg'] = 'blue'
+#     elif box_number == 5:
+#         btn5['text'] = symbol
+#         if symbol == 'X':
+#             btn5['bg'] = 'red'
+#         else:
+#             btn5['bg'] = 'blue'
 
-    elif box_number == 6:
-        btn6['text'] = symbol
-        if symbol == 'X':
-            btn6['bg'] = 'red'
-        else:
-            btn6['bg'] = 'blue'
+#     elif box_number == 6:
+#         btn6['text'] = symbol
+#         if symbol == 'X':
+#             btn6['bg'] = 'red'
+#         else:
+#             btn6['bg'] = 'blue'
 
-    elif box_number == 7:
-        btn7['text'] = symbol
-        if symbol == 'X':
-            btn7['bg'] = 'red'
-        else:
-            btn7['bg'] = 'blue'
+#     elif box_number == 7:
+#         btn7['text'] = symbol
+#         if symbol == 'X':
+#             btn7['bg'] = 'red'
+#         else:
+#             btn7['bg'] = 'blue'
 
-    elif box_number == 8:
-        btn8['text'] = symbol
-        if symbol == 'X':
-            btn8['bg'] = 'red'
-        else:
-            btn8['bg'] = 'blue'
+#     elif box_number == 8:
+#         btn8['text'] = symbol
+#         if symbol == 'X':
+#             btn8['bg'] = 'red'
+#         else:
+#             btn8['bg'] = 'blue'
 
-    elif box_number == 9:
-        btn9['text'] = symbol
-        if symbol == 'X':
-            btn9['bg'] = 'red'
-        else:
-            btn9['bg'] = 'blue'
+#     elif box_number == 9:
+#         btn9['text'] = symbol
+#         if symbol == 'X':
+#             btn9['bg'] = 'red'
+#         else:
+#             btn9['bg'] = 'blue'
 
-btn1=Button(window, width=10, height=5 )
-btn1.place(x=100, y=50)
-btn4=Button(window, width=10, height=5 )
-btn4.place(x=100, y=135)
-btn7=Button(window, width=10, height=5 )
-btn7.place(x=100, y=220)
-btn2=Button(window, width=10, height=5 )
-btn2.place(x=180, y=50)
-btn5=Button(window, width=10, height=5 )
-btn5.place(x=180, y=135)
-btn8=Button(window, width=10, height=5 )
-btn8.place(x=180, y=220)
-btn3=Button(window, width=10, height=5)
-btn3.place(x=260, y=50)
-btn6=Button(window, width=10, height=5)
-btn6.place(x=260, y=135)
-btn9=Button(window, width=10, height=5)
-btn9.place(x=260, y=220)
+# btn1=Button(window, width=10, height=5 )
+# btn1.place(x=100, y=50)
+# btn4=Button(window, width=10, height=5 )
+# btn4.place(x=100, y=135)
+# btn7=Button(window, width=10, height=5 )
+# btn7.place(x=100, y=220)
+# btn2=Button(window, width=10, height=5 )
+# btn2.place(x=180, y=50)
+# btn5=Button(window, width=10, height=5 )
+# btn5.place(x=180, y=135)
+# btn8=Button(window, width=10, height=5 )
+# btn8.place(x=180, y=220)
+# btn3=Button(window, width=10, height=5)
+# btn3.place(x=260, y=50)
+# btn6=Button(window, width=10, height=5)
+# btn6.place(x=260, y=135)
+# btn9=Button(window, width=10, height=5)
+# btn9.place(x=260, y=220)
 
 import random
 import time
@@ -434,7 +434,7 @@ def main():
         # time.sleep(1)
         num.remove(choice)
         print(str(choice) + " " + start_Player)
-        on_click(choice+1 , start_Player)
+        # on_click(choice+1 , start_Player)
         x = choice//3
         y = choice%3
         board[choice] = start_Player
@@ -479,4 +479,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-window.mainloop()
+# window.mainloop()

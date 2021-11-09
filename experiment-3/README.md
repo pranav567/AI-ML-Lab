@@ -9,4 +9,3 @@ If there are similar moves then it selects at random where to place the piece.
 
 To be able to see the demonstration, download the game.py file and run the python file. No installations required.
 For user's input 0-1-2 represent the first row, 3-4-5, the 2nd row and 6-7-8 the 3rd row. 
-You can see the board on the left hand side of your screen and also on the terminal.
