@@ -381,57 +381,57 @@ def main():
         print()
 
         #user vs comp
-        if total_moves%2 == 0:
-            choice = int(input("Enter your choice from 0 - 8: "))
-            while choice not in num:
-                choice = int(input("Enter your choice from 0 - 8: "))
+        # if total_moves%2 == 0:
+        #     choice = int(input("Enter your choice from 0 - 8: "))
+        #     while choice not in num:
+        #         choice = int(input("Enter your choice from 0 - 8: "))
             
-        else:
-            if total_moves < 2:
-                choice = random.choice(num)
-            else:
-                my_win = check_wins()
-                choice = -1
-                if start_Player == 'O':
-                    if len(my_win[0]) > 0:
-                        choice = my_win[0][0]
-                elif start_Player == 'X':
-                    if len(my_win[1]) > 0:
-                        choice = my_win[1][0]
-                if choice == -1:
-                    if start_Player == 'O':
-                        if len(my_win[1]) > 0:
-                            choice = my_win[1][0]
-                    elif start_Player == 'X':
-                        if len(my_win[0]) > 0:
-                            choice = my_win[0][0]
-                
-                if choice == -1:
-                    choice = heuristic(start_Player)
-
-        # comp vs comp
-        # if total_moves < 2:
-        #     choice = random.choice(num)
         # else:
-        #     my_win = check_wins()
-        #     choice = -1
-        #     if start_Player == 'O':
-        #         if len(my_win[0]) > 0:
-        #             choice = my_win[0][0]
-        #     elif start_Player == 'X':
-        #         if len(my_win[1]) > 0:
-        #             choice = my_win[1][0]
-        #     if choice == -1:
+        #     if total_moves < 2:
+        #         choice = random.choice(num)
+        #     else:
+        #         my_win = check_wins()
+        #         choice = -1
         #         if start_Player == 'O':
-        #             if len(my_win[1]) > 0:
-        #                 choice = my_win[1][0]
-        #         elif start_Player == 'X':
         #             if len(my_win[0]) > 0:
         #                 choice = my_win[0][0]
+        #         elif start_Player == 'X':
+        #             if len(my_win[1]) > 0:
+        #                 choice = my_win[1][0]
+        #         if choice == -1:
+        #             if start_Player == 'O':
+        #                 if len(my_win[1]) > 0:
+        #                     choice = my_win[1][0]
+        #             elif start_Player == 'X':
+        #                 if len(my_win[0]) > 0:
+        #                     choice = my_win[0][0]
+                
+        #         if choice == -1:
+        #             choice = heuristic(start_Player)
+
+        # comp vs comp
+        if total_moves < 2:
+            choice = random.choice(num)
+        else:
+            my_win = check_wins()
+            choice = -1
+            if start_Player == 'O':
+                if len(my_win[0]) > 0:
+                    choice = my_win[0][0]
+            elif start_Player == 'X':
+                if len(my_win[1]) > 0:
+                    choice = my_win[1][0]
+            if choice == -1:
+                if start_Player == 'O':
+                    if len(my_win[1]) > 0:
+                        choice = my_win[1][0]
+                elif start_Player == 'X':
+                    if len(my_win[0]) > 0:
+                        choice = my_win[0][0]
             
-        #     if choice == -1:
-        #         choice = heuristic(start_Player)
-        # time.sleep(1)
+            if choice == -1:
+                choice = heuristic(start_Player)
+        time.sleep(1)
         num.remove(choice)
         print(str(choice) + " " + start_Player)
         # on_click(choice+1 , start_Player)
